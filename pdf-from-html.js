@@ -26,6 +26,7 @@ module.exports = (htmlInput, pdfOptions = {}) => {
     try {
       // start a browser with puppeter
       const browser = await puppeteer.launch({
+        args: ['--no-sandbox']
       });
       const page = await browser.newPage();
       page.setViewport({
