@@ -9,10 +9,12 @@ This is a micro service that simply returns a pdf file from an html string.
 
 POST `/create-pdf` with parameters:
 
+
+| param | desc |
+|-----|-------|
 | `html` | An html string, potentially containing external stylesheets and scripts |
 | `filename` | Name of the file to be returned |
 | `pdfOptions` | an object containing any options available to [https://github.com/puppeteer/puppeteer/blob/v5.4.1/docs/api.md#pagepdfoptions](puppeteer's `.pdf` method) |
-
 ## TODO:
 
 - add a secret key to only allow certain sources to access the servicce
