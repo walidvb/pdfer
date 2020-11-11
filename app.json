@@ -1,0 +1,7 @@
+{
+  "name": "pdfer2000",
+  "description": "A micro service to turn html into a pdf",
+  "repository": "https://github.com/walidvb/pdfer",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "static", "pdf"]
+}

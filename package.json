@@ -1,0 +1,13 @@
+{
+  "name": "pdfer",
+  "version": "1.0.0",
+  "description": "a print to pdf service",
+  "main": "index.js",
+  "repository": "https://github.com/walidvb/pdfer",
+  "author": "walidvb",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "puppeteer": "^5.4.1"
+  }
+}
