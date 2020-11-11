@@ -20,7 +20,7 @@ app.get('/test', (req, res) => {
   })()
 })
 
-app.post('/create-pdf', (req, res) => {
+app.post('/', (req, res) => {
   const html = req.body.html
   const filename = req.body.filename
   const pdfOptions = req.body.pdfOptions
