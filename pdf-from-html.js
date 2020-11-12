@@ -34,12 +34,15 @@ module.exports = (htmlInput, pdfOptions = {}) => {
         height: 1000,
       })
       const frame = page.mainFrame()
+      console.log('setting content')
       await frame.setContent(htmlInput, { waitUntil: 'networkidle2' })
+      console.log('content set')
       await page.setJavaScriptEnabled(true);
       // we assume, the input received externally, only have the body
       // so here, we have a template in order to apply styles
       // now, go to page
       // await page.goto(`file://${outputHTMLFilePath}`, { waitUntil: 'networkidle2' });
+      console.log('printing pdf')
       await page.emulateMediaType('print');
       // generate the pdf
       const pdfBuffer = await page.pdf({ 
@@ -50,8 +53,9 @@ module.exports = (htmlInput, pdfOptions = {}) => {
         // footerTemplate: '<div style="font-size: 12px"><div class="pageNumber">hi</div><div>hi</div></div>',
         ...pdfOptions,
       });
+      console.log('pdf printed')
       // close the browser
-      await browser.close();
+      browser.close();
       resolve(pdfBuffer);
     } catch (e) {
       reject(e);
