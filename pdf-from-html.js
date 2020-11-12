@@ -42,15 +42,16 @@ module.exports = (htmlInput, pdfOptions = {}) => {
       // so here, we have a template in order to apply styles
       // now, go to page
       // await page.goto(`file://${outputHTMLFilePath}`, { waitUntil: 'networkidle2' });
-      console.log('printing pdf')
       await page.emulateMediaType('print');
       // generate the pdf
+      console.log('printing pdf')
       const pdfBuffer = await page.pdf({ 
         format: 'A4', 
         ...DEFAULT_PDF_OPTIONS, 
         marginTop: "100px",
         marginBottom: "100px",
-        // footerTemplate: '<div style="font-size: 12px"><div class="pageNumber">hi</div><div>hi</div></div>',
+        headerTemplate: '<span></span>',
+        footerTemplate: '<div style="color: #738088;font-size: 10px; font-family: Roboto, Helvetica, Arial; text-align: center; width: 100% ">page <span class="pageNumber"></span> of <span class="totalPages">hi</span></div>',
         ...pdfOptions,
       });
       console.log('pdf printed')
